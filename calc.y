@@ -16,7 +16,7 @@ int yylex();
 %token <id> AddOp
 %token <id> MinOp
 %token <id> MulOp
-%token <id> ExpOp
+%token <id> DivOp
 %type <num> line exp
 %type <num> term
 %type <num> factor
@@ -27,6 +27,7 @@ line    : exit_command ';'		{exit(EXIT_SUCCESS);}
 		| exp ';'			{printf("Result: %d\n", $1);}
 		| line exp ';'	{printf("Printing %d\n", $2);}
 		| line exit_command ';'	{exit(EXIT_SUCCESS);}
+		| exp exit_command ';'	{printf("Result: %d\n", $1); exit(EXIT_SUCCESS);}
         ;
 
 exp    	: term                    {$$ = $1;}
@@ -36,10 +37,10 @@ exp    	: term                    {$$ = $1;}
 
 term   	: factor                {$$ = $1;}
 		| factor MulOp term		{$$ = $1 * $3;}
+		| factor DivOp term		{$$ = $1 / $3;}
         ;
 
 factor  : primary               {$$ = $1;}
-		| factor ExpOp term		{$$ = $1 ^ $3;}
         ;
 
 primary : number                {$$ = $1;}
@@ -49,7 +50,7 @@ primary : number                {$$ = $1;}
 %%
 
 int main (void) {
-
+	printf("Calc: ");
 	return yyparse();
 }
 

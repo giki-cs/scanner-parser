@@ -47,7 +47,7 @@
      AddOp = 263,
      MinOp = 264,
      MulOp = 265,
-     ExpOp = 266
+     DivOp = 266
    };
 #endif
 /* Tokens.  */
@@ -59,7 +59,7 @@
 #define AddOp 263
 #define MinOp 264
 #define MulOp 265
-#define ExpOp 266
+#define DivOp 266
 
 
 

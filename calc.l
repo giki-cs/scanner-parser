@@ -13,7 +13,7 @@ int yylex();
 "+"                    {return AddOp; }
 "-"                    {return MinOp; }
 "*"                    {return MulOp; }
-"^"                    {return ExpOp; }
+"/"                    {return DivOp; }
 .                      {ECHO; yyerror ("unexpected character");}
 
 %%
