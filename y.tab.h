@@ -47,7 +47,8 @@
      AddOp = 263,
      MinOp = 264,
      MulOp = 265,
-     DivOp = 266
+     DivOp = 266,
+     Comment = 267
    };
 #endif
 /* Tokens.  */
@@ -60,6 +61,7 @@
 #define MinOp 264
 #define MulOp 265
 #define DivOp 266
+#define Comment 267
 
 
 
@@ -69,7 +71,7 @@ typedef union YYSTYPE
 #line 9 "calc.y"
 {int num; char id;}
 /* Line 1529 of yacc.c.  */
-#line 73 "y.tab.h"
+#line 75 "y.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

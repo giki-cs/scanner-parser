@@ -17,6 +17,7 @@ int yylex();
 %token <id> MinOp
 %token <id> MulOp
 %token <id> DivOp
+%token <id> Comment
 %type <num> line exp
 %type <num> term
 %type <num> factor

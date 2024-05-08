@@ -10,6 +10,7 @@ int yylex();
 ")"                    return endingParanthesis;
 [ \t\n]                ;
 ";"                    {return yytext[0];}
+#[ a-zA-Z0-9]+            ;
 "+"                    {return AddOp; }
 "-"                    {return MinOp; }
 "*"                    {return MulOp; }
